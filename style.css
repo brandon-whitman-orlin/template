@@ -1,0 +1,205 @@
+body {
+    margin: 0;
+}
+
+.betterHeader .headerSpaceholder {
+    height: 5rem;
+    width: 100%;
+    position: relative;
+}
+
+.betterHeader .realHeader {
+    background-color: tomato;
+    height: 5rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.betterHeader .logoLink {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 1rem;
+    text-decoration: none;
+    left: 0;
+    padding: 0.05rem 0.5rem;
+    position: absolute;
+    z-index: 2;
+    border-radius: 10px;
+
+    color: inherit;
+}
+
+.betterHeader .logoLink img {
+    position: relative;
+    height: max(1.2rem, 3.5vw);
+    margin-right: 0.75rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.betterHeader .logoLink h2 {
+    position: relative;
+    color: inherit;
+    white-space: nowrap;
+    font-size: max(1.2rem, 3.5vw);
+    margin: 0;
+    transition: font-size 0.3s ease-in-out;
+}
+
+.betterHeader .logoLink:hover img{
+    transform: scale(1.2);
+}
+
+.betterHeader .logoLink:hover h2{
+    font-size: max(1.5rem, 4vw);
+}
+
+.betterHeader .logoLink:focus-visible {
+    outline: 2px solid white;
+    outline-offset: calc(15px - 5px * ((100vw - 1200px) / 200));
+}
+
+.betterHeader .logoLink:focus-visible img{
+    transform: scale(1.2);
+}
+
+.betterHeader .logoLink:focus-visible h2{
+    font-size: max(1.5rem, 4vw);
+}
+
+.betterHeader .navBar {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin: 0rem 1rem;
+    position: relative;
+    height: 100%;
+
+    background-color: inherit;
+}
+
+.betterHeader .navBar .distanceChecker {
+    position: relative;
+    height: 100%;
+    width: 2rem;
+}
+
+.betterHeader .navBar .spaceHolder {
+    position: relative;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.betterHeader .navBar .spaceHolder .openNav {
+    position: absolute;
+    width: max(1.2rem, 3.5vw);
+    height: max(1.2rem, 3.5vw);
+    background-color: transparent;
+    border: none;
+    background-image: url(assets/openMenu.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 100%;
+    padding: 0rem;
+    outline: 0px solid rgba(0, 0, 0, 0);
+    outline-offset: -10px;
+    transition: transform 0.3s ease-in-out, outline 0.3s ease-in-out, outline-offset 0.3s ease-in-out;
+}
+
+.betterHeader .navBar .spaceHolder .openNav:hover {
+    filter: invert();
+    transform: scale(1.1);
+}
+
+.betterHeader .navBar .spaceHolder .openNav:focus-visible {
+    filter: invert();
+    font-size: larger;
+    font-weight: bolder;
+    outline: 2px solid rgba(0, 0, 0, 1);
+    outline-offset: 5px;
+}
+
+.betterHeader .navBar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    list-style: none;
+    height: 100%;
+    margin: 0;
+    position: relative;
+    background-color: inherit;
+}
+
+.betterHeader .navBar[data-expanded="true"] .spaceHolder .openNav {
+    visibility: hidden;
+}
+
+.betterHeader .navBar[data-expanded="false"] .spaceHolder .openNav {
+    visibility: visible;
+}
+
+.betterHeader .navBar[data-expanded="true"] ul {
+    position: relative;
+    opacity: 1 !important;
+}
+
+.betterHeader .navBar[data-expanded="false"] ul {
+    position: absolute;
+    top: 100%;
+}
+
+.betterHeader .navBar ul[data-open="true"] {
+    opacity: 1;
+    right: -1rem;
+    width: 100vw;
+    flex-wrap: wrap;
+}
+
+.betterHeader .navBar ul[data-open="false"] {
+    opacity: 0;
+}
+
+.betterHeader .navBar ul {
+    position: absolute;
+}
+
+.betterHeader .navBar ul li {
+    white-space: nowrap;
+    width: max-content;
+    padding: 0rem 0.5rem;
+}
+
+.betterHeader .navBar ul li a {
+    text-decoration: none;
+    color: inherit;
+    border-radius: 10px;
+    outline: 0px solid rgba(0, 0, 0, 0);
+    outline-offset: -10px;
+    transition: outline 0.3s ease-in-out, padding 0.3s ease-in-out, font-size 0.3s ease-in-out, font-weight 0.3s ease-in-out, outline-offset 0.3s ease-in-out;
+}
+
+.betterHeader .navBar ul li a:hover {
+    filter: invert();
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.betterHeader .navBar ul li a:focus-visible {
+    filter: invert();
+    font-size: larger;
+    font-weight: bolder;
+    outline: 2px solid rgba(0, 0, 0, 1);
+    outline-offset: 0px;
+    padding: 0.5rem;
+}
+
+
